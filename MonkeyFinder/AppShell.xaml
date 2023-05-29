@@ -24,7 +24,8 @@
     </Shell.Resources>
     
     <ShellContent
-        Title="Home"
+        Shell.NavBarIsVisible="true"
+        Title="Monkeys"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
