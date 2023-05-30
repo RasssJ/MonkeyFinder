@@ -1,9 +1,19 @@
+using MonkeyFinder.ViewModel;
+
 namespace MonkeyFinder.View;
+
 
 public partial class DetailsPage : ContentPage
 {
-	public DetailsPage()
-	{
-		InitializeComponent();
-	}
+
+    public DetailsPage(MonkeyDetailsViewModel viewModel)
+    {
+        InitializeComponent();
+        BindingContext = viewModel;
+    }
+
+    protected override void OnNavigatedTo(NavigatedToEventArgs args)
+    {
+        base.OnNavigatedTo(args);
+    }
 }

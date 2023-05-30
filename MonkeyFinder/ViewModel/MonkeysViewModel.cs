@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.Input;
+using MonkeyFinder.View;
 using Services;
 using System.Linq.Expressions;
 
@@ -12,6 +13,20 @@ public partial class MonkeysViewModel : BaseViewModel
             Title = "Monkey Finder";
             this.monkeyService = monkeyService;
         }
+
+    [RelayCommand]
+    async Task GoToDetailsAsync(Monkey monkey)
+    {
+        if (monkey is null)
+            return;
+
+        await Shell.Current.GoToAsync($"{nameof(DetailsPage)}", true,
+            new Dictionary<string, object>
+            {
+                {"Monkey", monkey }
+            });
+    }
+
     [RelayCommand]
     async Task GetMonkeyAsync()
     {
