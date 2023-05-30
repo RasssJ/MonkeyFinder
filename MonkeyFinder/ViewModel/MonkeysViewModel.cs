@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.Input;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using MonkeyFinder.View;
 using Services;
 using System.Linq.Expressions;
@@ -19,6 +20,9 @@ public partial class MonkeysViewModel : BaseViewModel
             this.connectivity = connectivity;
             this.geolocation = geolocation;
     }
+
+    [ObservableProperty]
+    bool isRefreshing;
 
     [RelayCommand]
     async Task GetClosestMonkeyAsync()
@@ -107,6 +111,7 @@ public partial class MonkeysViewModel : BaseViewModel
         finally
         {
             IsBusy = false;
+            IsRefreshing = false;
         }
 
     }
