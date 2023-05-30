@@ -1,4 +1,5 @@
-﻿using Services;
+﻿using CommunityToolkit.Mvvm.Input;
+using Services;
 using System.Linq.Expressions;
 
 namespace ViewModel;
@@ -11,6 +12,7 @@ public partial class MonkeysViewModel : BaseViewModel
             Title = "Monkey Finder";
             this.monkeyService = monkeyService;
         }
+    [RelayCommand]
     async Task GetMonkeyAsync()
     {
         if (IsBusy)

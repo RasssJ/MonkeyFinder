@@ -3,6 +3,9 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:model="clr-namespace:MonkeyFinder.Model"
+    xmlns:viewmodel="clr-namespace:ViewModel"
+    x:DataType="viewmodel:MonkeysViewModel"
+    Title="{Binding Title}"
     x:Class="MonkeyFinder.MainPage">
 
     <CollectionView>
